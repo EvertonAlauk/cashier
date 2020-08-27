@@ -1,8 +1,6 @@
-
-from schemas import schema
+from schemas.schema import Schema
 
 class Cashier:
     print('Cashier')
-    schema.Schema()
 
 Cashier()
