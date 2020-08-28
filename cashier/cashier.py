@@ -1,6 +1,11 @@
-from schemas.schema import Schema
 
 class Cashier:
-    print('Cashier')
+    """ 
+    This application have the checkout responbility.
+    """
+    def __init__(self):
+        super().__init__()
+        print("Cashier")
 
-Cashier()
+if __name__ == "__main__":
+    Cashier()
