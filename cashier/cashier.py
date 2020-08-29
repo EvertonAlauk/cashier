@@ -41,9 +41,9 @@ class Cashier(object):
         logging.info('Create a checkout')
         response = requests.request('POST', url=cls.url, payload=cls.payload)
 
-        if request.status_code == 200:
+        if response.status_code == 200:
             logging.info('Checkout done')
-            return json.loads(request.text)
+            return json.loads(response.text)
         else:
             logging.info('Checkout failure')
             raise Exception('Checkout failure')
