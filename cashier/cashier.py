@@ -16,10 +16,13 @@ class Cashier(object):
         cls.payload = payload
 
     def is_valid(cls):
+        """
+        First, it's important to make sure that the parameters have been informed
+        """
         if not cls.url or not cls.schema or not cls.payload:
             logging.warning('Some param is missing')
             raise Exception('Some param is missing')
-        
+
         try:
             logging.info('Schema validate')
             return validate(instance=cls.payload, schema=cls.schema)
@@ -29,8 +32,6 @@ class Cashier(object):
             """
             logging.warning(error.message)
             raise Exception(error.message)
-
-        return cls
 
     def create_checkout(cls):
         """
