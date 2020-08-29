@@ -14,6 +14,5 @@ docker run
 cashier = Cashier(url=url, payload=payload, schema=schema)
 
 if cashier.is_valid():
-    if cashier.validate_schema():
-        cashier.create_checkout()
+    cashier.create_checkout()
 ```

@@ -19,9 +19,7 @@ class Cashier(object):
         if not cls.url or not cls.schema or not cls.payload:
             logging.warning('Some param is missing')
             raise Exception('Some param is missing')
-        return cls
-
-    def validate_schema(cls):
+        
         try:
             logging.info('Schema validate')
             return validate(instance=cls.payload, schema=cls.schema)
@@ -31,6 +29,8 @@ class Cashier(object):
             """
             logging.warning(error.message)
             raise Exception(error.message)
+
+        return cls
 
     def create_checkout(cls):
         """
