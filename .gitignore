@@ -5,3 +5,4 @@ __pycache__/
 cashier.log
 client.py
 *pyc
+.pytest_cache
